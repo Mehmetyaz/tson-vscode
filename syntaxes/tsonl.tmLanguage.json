@@ -1,0 +1,57 @@
+{
+  "name": "TSONL",
+  "scopeName": "source.tsonl",
+  "fileTypes": ["tsonl"],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#lineValue"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.tsonl",
+          "match": "//.*$"
+        }
+      ]
+    },
+    "lineValue": {
+      "patterns": [
+        {
+          "include": "source.tson#rootNamedValue"
+        },
+        {
+          "include": "source.tson#propertyName"
+        },
+        {
+          "include": "source.tson#number"
+        },
+        {
+          "include": "source.tson#boolean"
+        },
+        {
+          "include": "source.tson#null"
+        },
+        {
+          "include": "source.tson#typeSymbols"
+        },
+        {
+          "include": "source.tson#string"
+        },
+        {
+          "include": "source.tson#object"
+        },
+        {
+          "include": "source.tson#array"
+        },
+        {
+          "include": "source.tson#symbols"
+        }
+      ]
+    }
+  }
+}

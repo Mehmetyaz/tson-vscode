@@ -1,0 +1,25 @@
+{
+  "name": "tson",
+  "displayName": "TSON",
+  "description": "Token-Saving Object Notation",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "tson",
+      "aliases": ["TSON", "tson"],
+      "extensions": [".tson",".tsonl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "tson",
+      "scopeName": "",
+      "path": "./syntaxes/tson.tmLanguage.json"
+    }]
+  }
+}

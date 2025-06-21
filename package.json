@@ -1,0 +1,141 @@
+{
+  "name": "tson-vscode",
+  "displayName": "TSON Language Support",
+  "description": "Syntax highlighting and language support for TSON (Token-Saving Object Notation) files",
+  "version": "0.1.0",
+  "publisher": "tson",
+  "icon": "images/tson-icon.png",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "tson",
+        "aliases": [
+          "TSON",
+          "tson"
+        ],
+        "extensions": [
+          ".tson"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./images/logo_s.png",
+          "dark": "./images/logo_s.png"
+        }
+      },
+      {
+        "id": "tsonl",
+        "aliases": [
+          "TSONL",
+          "tsonl"
+        ],
+        "extensions": [
+          ".tsonl"
+        ],
+        "configuration": "./language-configuration-tsonl.json",
+        "icon": {
+          "light": "./images/logo_s.png",
+          "dark": "./images/logo_s.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "tson",
+        "scopeName": "source.tson",
+        "path": "./syntaxes/tson.tmLanguage.json"
+      },
+      {
+        "language": "tsonl",
+        "scopeName": "source.tsonl",
+        "path": "./syntaxes/tsonl.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "tson.format",
+        "title": "Format TSON Document",
+        "category": "TSON"
+      },
+      {
+        "command": "tson.formatSelection",
+        "title": "Format TSON Selection",
+        "category": "TSON"
+      },
+      {
+        "command": "tson.convertToJson",
+        "title": "Convert to JSON"
+      },
+      {
+        "command": "tson.convertToTSON",
+        "title": "Convert to TSON"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceExtname == .tson",
+          "command": "tson.convertToJson",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceExtname == .tsonl",
+          "command": "tson.convertToJson",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceExtname == .json || resourceExtname == .jsonl",
+          "command": "tson.convertToTSON",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "when": "resourceExtname == .tson",
+          "command": "tson.convertToJson",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceExtname == .tsonl",
+          "command": "tson.convertToJson",
+          "group": "navigation"
+        },
+        {
+          "when": "resourceExtname == .json || resourceExtname == .jsonl",
+          "command": "tson.convertToTSON",
+          "group": "navigation"
+        }
+      ]
+    },
+    "iconThemes": [
+      {
+        "id": "tson-icons",
+        "label": "TSON Icons",
+        "path": "./images/tson-icon-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^16.0.0",
+    "@types/vscode": "^1.80.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "tson-js": "file:../../packages/tson-js"
+  }
+}

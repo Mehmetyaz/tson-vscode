@@ -1,0 +1,6 @@
+// TSONL Example - Each line is a separate TSON object
+{name"John" age#30 city"New York"}
+{name"Jane" age#28 city"San Francisco"}
+{name"Bob" age#45 city"Chicago"}
+{name"Alice" age#32 city"Boston" isActive?true}
+{name"Charlie" age#37 city"Seattle" data~} 

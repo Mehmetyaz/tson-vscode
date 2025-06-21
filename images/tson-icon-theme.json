@@ -1,0 +1,35 @@
+{
+  "iconDefinitions": {
+    "tson": {
+      "iconPath": "./logo_s.png"
+    },
+    "tsonl": {
+      "iconPath": "./logo_s.png"
+    }
+  },
+  "fileExtensions": {
+    "tson": "tson",
+    "tsonl": "tsonl"
+  },
+  "languageIds": {
+    "tson": "tson"
+  },
+  "light": {
+    "fileExtensions": {
+      "tson": "tson",
+      "tsonl": "tsonl"
+    },
+    "languageIds": {
+      "tson": "tson"
+    }
+  },
+  "highContrast": {
+    "fileExtensions": {
+      "tson": "tson",
+      "tsonl": "tsonl"
+    },
+    "languageIds": {
+      "tson": "tson"
+    }
+  }
+}
